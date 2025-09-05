@@ -1,5 +1,24 @@
 # Types, Cast & Arrays
 
+- [Types](#types)
+- [Conversions Between Objects](#conversions-between-objects)
+  - [→ Cast Operator](#-cast-operator)
+  - [→ Assignment Operator (`operator=`)](#-assignment-operator-operator)
+  - [→ Copy Constructor](#-copy-constructor)
+- [`const` Modifier](#const-modifier)
+  - [→ Constant Objects](#-constant-objects)
+  - [b) Constant References](#b-constant-references)
+  - [c) Pointers to Constant Objects](#c-pointers-to-constant-objects)
+- [3. Static Members](#3-static-members)
+- [4. Arrays of Objects and References](#4-arrays-of-objects-and-references)
+  - [Arrays of Objects](#arrays-of-objects)
+  - [Arrays of References? ❌](#arrays-of-references-)
+- [5. Contiguous vs Continuous](#5-contiguous-vs-continuous)
+- [📊 Diagrams](#-diagrams)
+  - [Contiguous Memory (Array of Objects)](#contiguous-memory-array-of-objects)
+  - [Pointers to Objects (Array of Pointers)](#pointers-to-objects-array-of-pointers)
+- [🧠 Summary](#-summary)
+
 ## Types
 In C++ there are multiple standard types that are used:
 - `int` - integers &rarr; ex: 3, -10, 5
@@ -10,30 +29,18 @@ In C++ there are multiple standard types that are used:
   - 4 bytes (32-bit) and 8 bytes (64-bit)
   - <mark>*unsigned type*
 </mark>  - [`0`, `4.294.967.295`] or [`0x 0000 0000 0000 0000`, `0x 1111 1111 1111 1111`]
-
-# Seminar 1: Object-Oriented Programming in C++  
-### Type Conversions, Const Correctness, Static Members, and Arrays of Objects
-
----
-
-## 📌 Topics Covered
-1. Conversions between different types of objects
-   - Cast operator
-   - Assignment operator (`operator=`)
-   - Copy constructor
-2. `const` modifier
-   - Constant objects
-   - Constant references to objects
-   - Pointers to constant objects
-3. Static members
-4. Arrays of objects and references to objects
-5. Memory layout: *contiguous* vs *continuous*
+- `float` - fraction numbers &rarr; 3,12; 4,920; 83,88
+- `double`
+- `boolean`
+- `char`
+- `unsigned char`
+- `String`*
 
 ---
 
-## 1. Conversions Between Objects
+## Conversions Between Objects
 
-### a) Cast Operator
+### &rarr; Cast Operator
 The **cast operator** allows explicit conversion between types.  
 Example:
 ```cpp
@@ -58,7 +65,7 @@ int main() {
 
 ---
 
-### b) Assignment Operator (`operator=`)
+### &rarr; Assignment Operator (`operator=`)
 The **assignment operator** is used when an *already existing* object is assigned a new value.
 ```cpp
 class B {
@@ -76,7 +83,7 @@ public:
 
 ---
 
-### c) Copy Constructor
+### &rarr; Copy Constructor
 The **copy constructor** creates a *new* object as a copy of another.
 ```cpp
 class C {
@@ -93,9 +100,9 @@ public:
 
 ---
 
-## 2. `const` Modifier
+## `const` Modifier
 
-### a) Constant Objects
+### &rarr; Constant Objects
 A constant object **cannot be modified** after creation.
 ```cpp
 class MyClass {
