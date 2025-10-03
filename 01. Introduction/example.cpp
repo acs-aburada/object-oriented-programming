@@ -65,6 +65,18 @@ int main() {
     }
     cout << n << endl;
 
+
+    // --- DATA TYPES ---
+    int number = 10;
+    cout << number << endl;
+    number = -4;
+    cout << number << endl;
+
+    unsigned int positive_number = 10;
+    cout << positive_number << endl;
+    positive_number = -4;
+    cout << positive_number << endl;
+
     return 0;
 }
 
